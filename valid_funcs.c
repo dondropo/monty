@@ -1,4 +1,13 @@
 #include "monty.h"
+/**
+ * validate_buffer - validator for the buff's content
+ * @line: current line
+ * @line_num: number of each line
+ * @h: stack_t pointer
+ * @file_des: descriptor of the file
+ *
+ * Return: none
+ */
 
 void validate_buffer(char *line, size_t line_num, stack_t **h, FILE *file_des)
 {
@@ -37,7 +46,12 @@ void validate_buffer(char *line, size_t line_num, stack_t **h, FILE *file_des)
 		executer(h, opcode, data, line_num);
 	}
 }
-
+/**
+ * valid_push - validator for the push funct
+ * @number: number of characters
+ *
+ * Return: none
+ */
 int valid_push(char *number)
 {
 	int i = 0;

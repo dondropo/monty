@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * reader - command line reader
+ * @file: readed file
+ *
+ * Return: none
+ */
 void reader(char *file)
 {
 	FILE *file_des;
@@ -24,9 +29,15 @@ void reader(char *file)
 	free_dlistint(head);
 	fclose(file_des);
 }
-
-
-
+/**
+ * executer - execute function
+ * @h: stack_t pointer
+ * @opcode: opcode interpreter by C
+ * @data: stack data
+ * @line_num: number of the line
+ *
+ * Return: none
+ */
 void executer(stack_t **h, char *opcode, int data, size_t line_num)
 {
 	int i = 0, flag = 0;
