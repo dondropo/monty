@@ -28,9 +28,9 @@ void mul(stack_t **head, unsigned int line_num)
 }
 
 /**
- * _pchar - prints the char at the top of the stack
- * @head: double pointer to the stack
- * @line_number: line number
+ * pchar - prints the char at the top of the stack
+ * @head: head of the list
+ * @line_num: line number
  *
  * Return: nothing
  */
