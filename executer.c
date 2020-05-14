@@ -46,7 +46,6 @@ void validate_buffer(char *line, size_t line_num, stack_t **h)
 	opcode = strtok(line, sepa);
 	if (opcode)
 	{
-
 		if (opcode[0] == '#')
 			return;
 

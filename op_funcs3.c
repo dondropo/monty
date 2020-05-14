@@ -10,22 +10,21 @@
 
 void mul(stack_t **head, unsigned int line_num)
 {
-	stack_t *tmp;
+	stack_t *tmp = NULL;
+	int mul;
 
-	if (*head && head && (*head)->next)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
-		tmp = *head;
-		*head = (*head)->next;
-		(*head)->n = ((*head)->n * tmp->n);
-		(*head)->prev = NULL;
-		free(tmp);
-	}
-	else
-	{
-		dprintf(STDERR_FILENO, "L%d: can't mul, stack too short\n", line_num);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
 		clean_memory();
 		exit(EXIT_FAILURE);
 	}
+	tmp = (*head)->next;
+	mul = tmp->n * tmp->prev->n;
+	tmp->n = mul;
+	free(tmp->prev);
+	*head = tmp;
+	tmp->prev = NULL;
 }
 
 /**
