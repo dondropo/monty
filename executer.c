@@ -50,6 +50,7 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 	    {"add", add},
 	    {"nop", nope},
 	    {"sub", sub},
+	    {"mul", mul},
 	    {NULL, NULL}};
 
 	if (strcmp("push", opcode) == 0)
