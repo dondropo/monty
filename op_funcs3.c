@@ -26,3 +26,27 @@ void mul(stack_t **head, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * _pchar - prints the char at the top of the stack
+ * @head: double pointer to the stack
+ * @line_number: line number
+ *
+ * Return: nothing
+ */
+
+void pchar(stack_t **head, unsigned int line_num)
+{
+	if (*head == NULL)
+	{
+		dprintf(STDERR_FILENO, "L%d: can't pchar, stack empty\n", line_num);
+		exit(EXIT_FAILURE);
+	}
+	if (isascii((*head)->n))
+	{
+		printf("%c\n", (*head)->n);
+		return;
+	}
+	dprintf(STDERR_FILENO, "L%d: can't pchar, value out of range\n", line_num);
+	exit(EXIT_FAILURE);
+}

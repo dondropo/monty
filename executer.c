@@ -51,6 +51,7 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 	    {"nop", nope},
 	    {"sub", sub},
 	    {"mul", mul},
+	    {"pchar", pchar},
 	    {NULL, NULL}};
 
 	while (opcode[j])
