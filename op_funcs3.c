@@ -103,6 +103,11 @@ void pstr(stack_t **head, unsigned int line_num)
 
 	while (temp)
 	{
+		if (temp->n < 1 || temp->n > 127)
+		{
+			putchar('\n');
+			return;
+		}
 		printf("%c", temp->n);
 		temp = temp->next;
 	}
