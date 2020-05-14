@@ -45,10 +45,10 @@ void executer(stack_t **h, char *opcode, int data, size_t line_num)
 	instruction_t instruct[] = {
 	    {"pall", print_all},
 	    {"pint", pint},
-	    {"pop", NULL},
-	    {"swap", NULL},
+	    {"pop", pop_element},
+	    {"swap", swap},
 	    {"add", NULL},
-	    {"pop", NULL},
+	    {"nop", nope},
 	    {NULL, NULL}};
 
 	if (strcmp("push", opcode) == 0)
@@ -64,6 +64,7 @@ void executer(stack_t **h, char *opcode, int data, size_t line_num)
 			{
 				flag = 1;
 				instruct[i].f(h, line_num);
+				break;
 			}
 			i++;
 		}
