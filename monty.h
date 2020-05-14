@@ -56,5 +56,6 @@ void exec_push(stack_t **head, int data);
 void print_all(stack_t **stack, unsigned int line_num);
 void pint(stack_t **stack, unsigned int line_num);
 void free_dlistint(stack_t *head);
+void swap(stack_t **head, unsigned int line_number);
 
 #endif /* !MONTY_H */
