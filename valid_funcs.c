@@ -12,10 +12,11 @@ int valid_push(char *number)
 
 	while (number[i])
 	{
-		if (number[0] == '-')
+		if (number[i] == '-')
 			i++;
 		if (!isdigit(number[i]))
 			return (0);
+
 		i++;
 	}
 
