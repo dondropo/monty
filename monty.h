@@ -58,5 +58,6 @@ void pint(stack_t **stack, unsigned int line_num);
 void free_dlistint(stack_t *head);
 void swap(stack_t **head, unsigned int line_number);
 void pop_element(stack_t **head, unsigned int line_num);
+void nope(stack_t **head, unsigned int line_num);
 
 #endif /* !MONTY_H */

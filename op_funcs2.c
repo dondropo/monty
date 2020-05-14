@@ -39,3 +39,17 @@ void pop_element(stack_t **head, unsigned int line_num)
 	(*head)->prev = NULL;
 	free(tmp);
 }
+
+/**
+ * nope - Execute the opcode nop
+ * @head: pointer to head of the stack
+ * @line_num: number of the line
+ *
+ * Return: none
+ */
+
+void nope(stack_t **head, unsigned int line_num)
+{
+	(void)(head);
+	(void)(line_num);
+}
