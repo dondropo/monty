@@ -1,2 +1,2 @@
-push $
+push                    6$
 pall

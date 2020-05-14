@@ -77,7 +77,7 @@ void add(stack_t **head, unsigned int line_num)
 	}
 	else
 	{
-		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n", line_num);
+		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_num);
 		exit(EXIT_FAILURE);
 	}
 }
