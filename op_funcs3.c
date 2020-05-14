@@ -16,7 +16,7 @@ void mul(stack_t **head, unsigned int line_num)
 	{
 		tmp = *head;
 		*head = (*head)->next;
-		(*head)->n = (tmp->n * (*head)->n);
+		(*head)->n = ((*head)->n * tmp->n);
 		(*head)->prev = NULL;
 		free(tmp);
 	}
