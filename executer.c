@@ -41,17 +41,15 @@ void validate_buffer(char *line, size_t line_num, stack_t **h)
 {
 
 	char *sepa = " \t\r\n", *opcode = NULL, *datastr = NULL;
-	int data = 0, j = 0;
+	int data = 0;
 
 	opcode = strtok(line, sepa);
 	if (opcode)
 	{
-		while (opcode[j])
-		{
-			if (opcode[j] == '#')
-				return;
-			j++;
-		}
+
+		if (opcode[0] == '#')
+			return;
+
 		if (strcmp("push", opcode) == 0)
 		{
 			datastr = strtok(NULL, sepa);
