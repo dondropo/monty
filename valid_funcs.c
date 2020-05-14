@@ -43,7 +43,13 @@ void validate_buffer(char *line, size_t line_num, stack_t **h, FILE *file_des)
 				}
 			}
 		}
-		executer(h, opcode, data, line_num);
+		if (executer(h, opcode, data, line_num) == 1)
+		{
+			free_dlistint(*h);
+			free(line);
+			fclose(file_des);
+			exit(EXIT_FAILURE);
+		}
 	}
 }
 /**

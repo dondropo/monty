@@ -48,7 +48,7 @@ void validate_buffer(char *line, size_t line_num, stack_t **h, FILE *file_des);
 
 /* Reader and executer */
 void reader(char *file);
-void executer(stack_t **h, char *opcode, int data, size_t line_num);
+int executer(stack_t **h, char *opcode, int data, size_t line_num);
 
 
 /* Opcode and struct funcs */

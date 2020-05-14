@@ -38,7 +38,7 @@ void reader(char *file)
  *
  * Return: none
  */
-void executer(stack_t **h, char *opcode, int data, size_t line_num)
+int executer(stack_t **h, char *opcode, int data, size_t line_num)
 {
 	int i = 0, flag = 0;
 
@@ -70,5 +70,9 @@ void executer(stack_t **h, char *opcode, int data, size_t line_num)
 		}
 	}
 	if (flag == 0)
+	{
 		dprintf(STDERR_FILENO, "L%ld: unknown instruction %s\n", line_num, opcode);
+		return (1);
+	}
+	return (0);
 }

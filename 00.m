@@ -1,4 +1,9 @@
-push 12
+push 1
 push 2
-push 3
+push 33
+pall
+pint
+
+push 44
+push alo
 pall
