@@ -53,3 +53,38 @@ void pchar(stack_t **head, unsigned int line_num)
 	clean_memory();
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * mod - mod the first two elements in the list
+ * @head: pointer to head of the stack
+ * @line_num: number of the line
+ *
+ * Return: none
+ */
+
+void mod(stack_t **head, unsigned int line_num)
+{
+	stack_t *tmp;
+
+	if (*head && (*head)->next)
+	{
+		
+		if ((*head)->n == 0)
+		{
+			printf("L%d: division by zero\n", line_num);
+			clean_memory();
+			exit(EXIT_FAILURE);
+		}
+		tmp = *head;
+		*head = (*head)->next;
+		(*head)->n = ((*head)->n % tmp->n);
+		(*head)->prev = NULL;
+		free(tmp);
+	}
+	else
+	{
+		dprintf(STDERR_FILENO, "L%d: can't mod, stack too short\n", line_num);
+		clean_memory();
+		exit(EXIT_FAILURE);
+	}
+}
