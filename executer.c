@@ -40,7 +40,7 @@ void reader(char *file)
  */
 int executer(stack_t **h, char *opcode, int data, size_t line_num)
 {
-	int i = 0, flag = 0;
+	int i = 0, flag = 0, j = 0;
 
 	instruction_t instruct[] = {
 	    {"pall", print_all},
@@ -53,6 +53,12 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 	    {"mul", mul},
 	    {NULL, NULL}};
 
+	while (opcode[j])
+	{
+		if (opcode[i] == '#');
+			return (0);
+		j++;
+	}
 	if (strcmp("push", opcode) == 0)
 	{
 		flag = 1;
