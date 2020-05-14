@@ -1,22 +1,41 @@
 #include "monty.h"
 
-void swap(stack_t **head, unsigned int line_number)
+/**
+ * swap - Swaps the first two elements in the list
+ * @head: pointer to head of the stack
+ * @line_num: number of the line
+ *
+ * Return: none
+ */
+
+void swap(stack_t **head, unsigned int line_num)
 {
-	stack_t *temp = *head;
+	stack_t *tmp, *current;
 	int num;
 
-	if (!*head && (*head)->next != NULL)
+	if (*head != NULL && (*head)->next != NULL)
 	{
-		printf("L%d: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		tmp = *head;
+		current = tmp->next;
+		num = tmp->n;
+		tmp->n = current->n;
+		current->n = num;
 	}
 	else
 	{
-		num = temp->n;
-		temp->n = temp->next->n;
-		temp->next->n = num;
+		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * pop_element - Pops the first element in the stack
+ * @head: pointer to head of the stack
+ * @line_num: number of the line
+ *
+ * Return: none
+ */
+
 void pop_element(stack_t **head, unsigned int line_num)
 {
 	stack_t *tmp;
@@ -29,12 +48,10 @@ void pop_element(stack_t **head, unsigned int line_num)
 	else
 	{
 		tmp = *head;
-	    if (tmp->next != NULL)
-	    {
-	    	tmp->next->prev = NULL;
-	    }
-	    *head = (*head)->next;
-	    free(tmp);
+		if (tmp->next != NULL)
+			tmp->next->prev = NULL;
+		*head = (*head)->next;
+		free(tmp);
 	}
 }
 
