@@ -82,12 +82,12 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 	int i = 0, flag = 0;
 
 	instruction_t instruct[] = {
-	    {"pall", print_all}, {"pint", pint},
-	    {"pop", pop_element}, {"swap", swap},
-	    {"add", add}, {"nop", nope},
-	    {"sub", sub}, {"mul", mul},
-	    {"pchar", pchar}, {"mod", mod},
-		{NULL, NULL}};
+		{"pall", print_all}, {"pint", pint},
+		{"pop", pop_element}, {"swap", swap},
+		{"add", add}, {"nop", nope},
+		{"sub", sub}, {"mul", mul},
+		{"pchar", pchar}, {"mod", mod},
+		{"div", div}, {NULL, NULL}};
 
 	if (strcmp("push", opcode) == 0)
 	{
