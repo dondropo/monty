@@ -71,7 +71,7 @@ void mod(stack_t **head, unsigned int line_num)
 		
 		if ((*head)->n == 0)
 		{
-			printf("L%d: division by zero\n", line_num);
+			dprintf(STDERR_FILENO, "L%d: division by zero\n", line_num);
 			clean_memory();
 			exit(EXIT_FAILURE);
 		}
