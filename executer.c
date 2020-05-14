@@ -47,7 +47,7 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 	    {"pint", pint},
 	    {"pop", pop_element},
 	    {"swap", swap},
-	    {"add", NULL},
+	    {"add", add},
 	    {"nop", nope},
 	    {NULL, NULL}};
 
