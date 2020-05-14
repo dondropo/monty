@@ -12,7 +12,7 @@ void mul(stack_t **head, unsigned int line_num)
 {
 	stack_t *tmp;
 
-	if (*head && (*head)->next)
+	if (*head || (*head)->next || head)
 	{
 		tmp = *head;
 		*head = (*head)->next;
