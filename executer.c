@@ -42,18 +42,10 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 {
 	int i = 0, flag = 0, j = 0;
 
-	instruction_t instruct[] = {
-	    {"pall", print_all},
-	    {"pint", pint},
-	    {"pop", pop_element},
-	    {"swap", swap},
-	    {"add", add},
-	    {"nop", nope},
-	    {"sub", sub},
-	    {"mul", mul},
-	    {"pchar", pchar},
-	    {NULL, NULL}};
-
+	instruction_t instruct[] = {{"pall", print_all}, {"pint", pint},
+								{"pop", pop_element}, {"swap", swap},
+								{"add", add}, {"nop", nope}, {"sub", sub},
+								{"mul", mul}, {"pchar", pchar}, {NULL, NULL}};
 	while (opcode[j])
 	{
 		if (opcode[j] == '#')
