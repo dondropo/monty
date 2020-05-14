@@ -55,7 +55,7 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 
 	while (opcode[j])
 	{
-		if (opcode[i] == '#')
+		if (opcode[j] == '#')
 			return (0);
 		j++;
 	}
