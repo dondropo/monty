@@ -23,6 +23,7 @@ void mul(stack_t **head, unsigned int line_num)
 	else
 	{
 		dprintf(STDERR_FILENO, "L%d: can't mul, stack too short\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 }
@@ -40,6 +41,7 @@ void pchar(stack_t **head, unsigned int line_num)
 	if (*head == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't pchar, stack empty\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 	if (isascii((*head)->n))
@@ -48,5 +50,6 @@ void pchar(stack_t **head, unsigned int line_num)
 		return;
 	}
 	dprintf(STDERR_FILENO, "L%d: can't pchar, value out of range\n", line_num);
+	clean_memory();
 	exit(EXIT_FAILURE);
 }

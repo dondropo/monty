@@ -24,6 +24,7 @@ void swap(stack_t **head, unsigned int line_num)
 	else
 	{
 		dprintf(STDERR_FILENO, "L%d: can't swap, stack too short\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 }
@@ -43,6 +44,7 @@ void pop_element(stack_t **head, unsigned int line_num)
 	if (*head == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%d: can't pop an empty stack\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 	else
@@ -78,6 +80,7 @@ void add(stack_t **head, unsigned int line_num)
 	else
 	{
 		dprintf(STDERR_FILENO, "L%d: can't add, stack too short\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 }
@@ -119,6 +122,7 @@ void sub(stack_t **head, unsigned int line_num)
 	else
 	{
 		dprintf(STDERR_FILENO, "L%d: can't sub, stack too short\n", line_num);
+		clean_memory();
 		exit(EXIT_FAILURE);
 	}
 }

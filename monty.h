@@ -41,9 +41,29 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct global_val_s - Global struct for better handling
+ * @buffer: string per line of the file
+ * @file_des: file descriptor
+ * @head: head of the list
+ */
+
+typedef struct global_val_s
+{
+	char *buffer;
+	FILE *file_des;
+	stack_t *head;
+
+} global_t;
+
+global_t global;
+
+
 /* Validate funcs */
 int valid_push(char *number);
-void validate_buffer(char *line, size_t line_num, stack_t **h, FILE *file_des);
+void validate_buffer(char *line, size_t line_num, stack_t **h);
+void error_handler(int type_err, char *opcode, unsigned int line_num);
+void clean_memory(void);
 
 
 /* Reader and executer */
