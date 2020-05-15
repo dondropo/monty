@@ -32,19 +32,18 @@ void rotl(stack_t **head, unsigned int line_num)
 
 void rotr(stack_t **head, unsigned int line_num)
 {
-	stack_t *temp = *head;
+	stack_t *temp = *head, *origin = *head;
 
-	(void)line_num;
-
-	if (!head && *head == NULL && (*head)->next == NULL)
+	(void) line_num;
+	if (head)
 		return;
 
 	while (temp->next)
 		temp = temp->next;
 
-	temp->prev->next = NULL;
-	temp->prev = NULL;
-	temp->next = (*head);
-	(*head)->prev = temp;
-	*head = (*head)->prev;
+	*head = origin->next;
+	(*head)->prev = NULL;
+	origin->next = NULL;
+	origin->prev = temp;
+	temp->next = origin;
 }
