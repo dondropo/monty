@@ -47,5 +47,4 @@ void rotr(stack_t **head, unsigned int line_num)
 	new->next = (*head);
 	new->prev = NULL;
 	(*head) = new;
-	pop_element(*head, line_num);
 }
