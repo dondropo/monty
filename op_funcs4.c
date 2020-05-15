@@ -32,7 +32,7 @@ void rotl(stack_t **head, unsigned int line_num)
 
 void rotr(stack_t **head, unsigned int line_num)
 {
-	stack_t *temp = *head, *new;
+	stack_t *temp = *head;
 
 	(void)line_num;
 
