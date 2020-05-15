@@ -34,6 +34,7 @@ void rotr(stack_t **head, unsigned int line_num)
 {
 	stack_t *temp = *head, *new;
 
+	(void)line_num;
 	if (!temp)
 		return;
 	while (temp->next)
