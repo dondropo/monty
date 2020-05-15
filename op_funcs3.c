@@ -92,7 +92,7 @@ void mod(stack_t **head, unsigned int line_num)
 /**
  * pstr - prints the string as a list
  * @head: pointer to the top of the list
- * @ln: line number of the current executing script
+ * @line_num: line number
  */
 
 void pstr(stack_t **head, unsigned int line_num)

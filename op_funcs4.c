@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * rotl - rotl
+ * @head: pointer to the top of the list
+ * @line_num: line number
+ */
+
 void rotl(stack_t **head, unsigned int line_num)
 {
 	stack_t *temp = *head, *new;
@@ -17,6 +23,12 @@ void rotl(stack_t **head, unsigned int line_num)
 	temp->next = new;
 	pop_element(head, line_num);
 }
+
+/**
+ * rotr - rotr
+ * @head: pointer to the top of the list
+ * @line_num: line number
+ */
 
 void rotr(stack_t **head, unsigned int line_num)
 {
