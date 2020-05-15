@@ -88,7 +88,7 @@ int executer(stack_t **h, char *opcode, int data, size_t line_num)
 		{"sub", sub}, {"mul", mul},
 		{"pchar", pchar}, {"mod", mod},
 		{"pstr", pstr}, {"div", _div},
-		{"rotl", rotl}, {NULL, NULL}};
+		{"rotl", rotl}, {"rotr", rotr},{NULL, NULL}};
 
 	if (strcmp("push", opcode) == 0)
 	{

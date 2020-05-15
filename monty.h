@@ -87,5 +87,6 @@ void mod(stack_t **head, unsigned int line_num);
 void pstr(stack_t **head, unsigned int line_num);
 void _div(stack_t **head, unsigned int line_num);
 void rotl(stack_t **head, unsigned int line_num);
+void rotr(stack_t **head, unsigned int line_num);
 
 #endif /* !MONTY_H */
